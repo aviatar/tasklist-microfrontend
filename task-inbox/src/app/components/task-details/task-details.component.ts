@@ -20,8 +20,8 @@ export class TaskDetailsComponent implements OnInit, OnChanges {
 
   }
 
-  taskCompleted(message: string) {
-    console.log(message);
+  taskCompleted(event: CustomEvent) {
+    console.log(event.detail);
   }
 
 }
