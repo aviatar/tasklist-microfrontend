@@ -36,6 +36,17 @@
           </label>
         </div>
       </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          <input class="form-control datepicker" placeholder="yyyy-mm-dd"
+                 formControlName="dueDate" ngbDatepicker #d="ngbDatepicker">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary mdi mdi-calendar" (click)="d.toggle()" type="button"></button>
+          </div>
+        </div>
+      </div>
+
       <div class="form-group row">
         <div class="col-sm-10">
           <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Complete Task</button>

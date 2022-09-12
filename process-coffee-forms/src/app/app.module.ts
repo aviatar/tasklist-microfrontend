@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { CoffeeUserTasksModule } from './coffee-user-tasks/coffee-user-tasks.module';
 import { ReorderTaskComponent } from './coffee-user-tasks/reorder-task/reorder-task.component';
 import { createCustomElement } from '@angular/elements';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { createCustomElement } from '@angular/elements';
   ],
   imports: [
     BrowserModule,
-    CoffeeUserTasksModule
+    CoffeeUserTasksModule,
+    NgbModule
   ]
 })
 export class AppModule implements DoBootstrap {

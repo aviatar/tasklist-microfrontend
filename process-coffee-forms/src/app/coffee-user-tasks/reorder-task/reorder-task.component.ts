@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-reorder-task',
@@ -7,6 +8,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styles: [`
     .form-group > label {
       font-weight: 500;
+    }
+    input.datepicker {
+      max-width: 200px;
     }
   `]
 })
@@ -22,7 +26,8 @@ export class ReorderTaskComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      beans: ['', Validators.required]
+      beans: ['', Validators.required],
+      dueDate: ['']
     });
   }
 
