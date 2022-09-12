@@ -1,0 +1,47 @@
+
+<code>
+  Task ID: {{ taskId }} <br/>
+  Engine URL: {{ engineUrl }}
+</code>
+
+<p class="mt-3">
+  You are running out of coffee ☕️. Continue with the reorder-process and select the coffee beans you want to order.
+</p>
+
+<div class="card">
+  <div class="card-body">
+
+    <form [formGroup]="form" (ngSubmit)="submitForm()">
+      <div class="form-group">
+        <label>Coffee Beans</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="exampleRadios1" value="dahlmeier"
+                 formControlName="beans">
+          <label class="form-check-label" for="exampleRadios1">
+            Dahlmeier Prodomo
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="exampleRadios2" value="albertOh"
+                 formControlName="beans">
+          <label class="form-check-label" for="exampleRadios2">
+            Albert Oh Kaffee Crema
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="exampleRadios3" value="jakobS"
+                 formControlName="beans">
+          <label class="form-check-label" for="exampleRadios3">
+            Jakob S. Cafe Crema
+          </label>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-10">
+          <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Complete Task</button>
+        </div>
+      </div>
+    </form>
+
+  </div>
+</div>

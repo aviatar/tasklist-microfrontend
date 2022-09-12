@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReorderTaskComponent } from './reorder-task/reorder-task.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -9,7 +10,9 @@ import { ReorderTaskComponent } from './reorder-task/reorder-task.component';
     ReorderTaskComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     ReorderTaskComponent
