@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Tasklist</a>
+  <button class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarsExampleDefault"
+          aria-controls="navbarsExampleDefault"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+</nav>
+
+<main role="main" class="container-fluid mt-4">
+  <div class="row">
+    <div class="col-3">
+      <app-task-list (taskSelected)="taskSelected($event)"></app-task-list>
+    </div>
+    <div class="col-9">
+      <div class="px-3">
+        <app-task-details *ngIf="selectedTask; else noTaskSelected" [userTask]="selectedTask"></app-task-details>
+        <ng-template #noTaskSelected>
+          Please select a task.
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</main>

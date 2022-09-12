@@ -1,0 +1,25 @@
+
+<h1>
+  {{ userTask.title}}
+</h1>
+
+<p>
+  {{ userTask.description }}
+</p>
+
+<ng-container *ngFor="let o of [userTask]"> <!-- reload component when input parameter changes -->
+  <ax-lazy-element *axLazyElementDynamic="userTask.componentData.elementName, url: userTask.componentData.componentUrl; loadingTemplate: loading; errorTemplate: error"
+                   [taskId]="userTask.id"
+                   [engineUrl]="userTask.componentData.baseUrl"
+                   (completed)="taskCompleted($any($event))"></ax-lazy-element>
+</ng-container>
+
+<ng-template #loading>
+  Loading task form...
+</ng-template>
+
+<ng-template #error>
+  <div class="alert alert-danger" role="alert">
+    Unable to load task form 😕
+  </div>
+</ng-template>
