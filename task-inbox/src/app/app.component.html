@@ -15,11 +15,11 @@
 <main role="main" class="container-fluid mt-4">
   <div class="row">
     <div class="col-3">
-      <app-task-list (taskSelected)="taskSelected($event)"></app-task-list>
+      <app-task-list></app-task-list>
     </div>
     <div class="col-9">
       <div class="px-3">
-        <app-task-details *ngIf="selectedTask; else noTaskSelected" [userTask]="selectedTask"></app-task-details>
+        <app-task-details *ngIf="selectedTask; else noTaskSelected"></app-task-details>
         <ng-template #noTaskSelected>
           Please select a task.
         </ng-template>

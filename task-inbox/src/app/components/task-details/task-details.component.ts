@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { UserTask } from '../task-list/task-list.component';
+import { TaskService } from '../../services/task.service';
 
 @Component({
   selector: 'app-task-details',
@@ -9,11 +10,12 @@ import { UserTask } from '../task-list/task-list.component';
 })
 export class TaskDetailsComponent implements OnInit, OnChanges {
 
-  @Input() userTask!: UserTask;
+  userTask?: UserTask;
 
-  constructor() { }
+  constructor(private taskService: TaskService) { }
 
   ngOnInit(): void {
+    this.taskService.getSelectedTask().subscribe(task => this.userTask = task);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -21,7 +23,7 @@ export class TaskDetailsComponent implements OnInit, OnChanges {
   }
 
   taskCompleted(event: CustomEvent) {
-    console.log(event.detail);
+    this.taskService.removeTask(this.userTask!.id);
   }
 
 }

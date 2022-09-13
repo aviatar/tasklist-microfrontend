@@ -1,11 +1,14 @@
 <div class="card">
   <div class="card-header">
-    Open Tasks ({{ userTasks.length }})
+    Open Tasks ({{ (userTasks$ | async)?.length }})
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item" *ngFor="let task of userTasks"
+    <li class="list-group-item" *ngFor="let task of userTasks$ | async"
         (click)="selectTask(task)">
      {{ task.title }}
+      <div>
+        <span class="badge badge-primary mr-1" *ngFor="let tag of task.tags">{{ tag }}</span>
+      </div>
     </li>
   </ul>
 </div>
