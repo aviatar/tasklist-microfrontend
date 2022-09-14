@@ -1,19 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { TaskService } from '../../services/task.service';
+import { TaskService, UserTask } from '../../services/task.service';
 import { Observable } from 'rxjs';
-
-export interface UserTask {
-  id: string;
-  title: string;
-  description: string;
-  createDate: Date;
-  tags: string[];
-  componentData: {
-    componentUrl: string;
-    elementName: string;
-    baseUrl: string;
-  }
-}
 
 @Component({
   selector: 'app-task-list',

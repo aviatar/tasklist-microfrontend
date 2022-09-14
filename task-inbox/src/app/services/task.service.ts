@@ -1,6 +1,18 @@
 import { Injectable } from '@angular/core';
-import { UserTask } from '../components/task-list/task-list.component';
 import { filter, map, Observable, ReplaySubject, take, withLatestFrom } from 'rxjs';
+
+export interface UserTask {
+  id: string;
+  title: string;
+  description: string;
+  createDate: Date;
+  tags: string[];
+  componentData: {
+    componentUrl: string;
+    elementName: string;
+    baseUrl: string;
+  }
+}
 
 const TASKS: UserTask[] = [
   {
