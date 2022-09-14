@@ -15,7 +15,7 @@
   <ng-container *ngFor="let o of [userTask]"> <!-- reload component when input parameter changes -->
     <ax-lazy-element *axLazyElementDynamic="userTask.componentData.elementName, url: userTask.componentData.componentUrl; loadingTemplate: loading; errorTemplate: error"
                      [taskId]="userTask.id"
-                     [engineUrl]="userTask.componentData.baseUrl"
+                     [baseUrl]="userTask.componentData.baseUrl"
                      (completed)="taskCompleted($any($event))"></ax-lazy-element>
   </ng-container>
 

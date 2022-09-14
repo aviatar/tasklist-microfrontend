@@ -17,7 +17,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ReorderTaskComponent implements OnInit {
 
   @Input() taskId!: string;
-  @Input() engineUrl!: string;
+  @Input() baseUrl!: string;
   @Output() completed = new EventEmitter<string>();
 
   form!: FormGroup;
